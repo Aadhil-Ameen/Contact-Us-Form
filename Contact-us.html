@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact-Page</title>
+</head>
+
+<body>
+   <h2 id="contact-heading">Contact Us</h2>
+   <div id="form-container">
+   <form>
+      <label for="username">Name :</label>
+      <input type="text" id="username" autocomplete="off">
+      <div class="error" id="name-error"></div>
+      
+      <label for="useremail">E-mail :</label>
+      <input type="email" id="useremail" autocomplete="off">
+      <div class="error" id="email-error"></div>
+
+      <label for="mailsubject">Subject :</label>
+      <input type="text" id="mailsubject" autocomplete="off">
+      <div class="error" id="subject-error"></div>
+
+      <label for="mail">Your Queries :</label>
+      <textarea id="mail"></textarea>
+      <div class="error" id="mail-error"></div>
+      <button type="submit">Submit</button>
+   </form>
+   </div>
+
+<style>
+       * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+      }
+      body{
+         background-image: url(https://imgs.search.brave.com/ceCtlreoEenif7PmUSCgNKvgJrmlwiwbVcw7b70N91U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMTE1/NTE4NS5wbmc);
+         background-position: left;
+         background-repeat: no-repeat;
+         background-size: cover;
+         width: 100vw;
+         height: 100vh;
+         overflow-x: hidden;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #contact-heading{
+         text-align: center;
+         font-size: 40px;
+         color: rgba(0, 204, 255, 0.842);
+         margin-top: 55px;
+         margin-bottom: 35px;
+         cursor: default;
+      }
+
+      #form-container{
+         display: flex;
+         justify-content: center;
+         margin-top: 30px;
+         align-items: center;
+      }
+
+      form{
+         background-color: rgba(255, 255, 255, 0.466);
+         align-content: center;
+         width: 400px;
+         max-width: 400px;
+         padding: 25px;
+         border-radius: 10px;
+         border: none;
+         box-shadow: 0px 0px 15px 5px;;
+      }
+
+      label{
+         font-size: 18px;
+         display: block;
+         margin-bottom: 3px;
+         margin-top: 8px;
+         color: rgb(0, 0, 0);
+         font-weight: 600;
+         cursor: pointer;
+      }
+
+      input{
+         width: 100%;
+         height: 38px;
+         margin-top: 7px;
+         margin-bottom: 5px;
+         font-family: sans-serif;
+         font-size: 17px;
+         padding-left: 10px;
+         padding-bottom: 5px;
+         padding-top: 5px;
+         border-radius: 7px;
+         border: 1px solid rgb(175, 172, 172);
+         cursor:text;
+         background-color: rgb(241, 240, 239);
+      }
+
+      input:focus{
+         outline: none;
+         border: 2px solid  rgba(10, 100, 235, 0.945);
+      }
+
+      textarea{
+         margin-top: 7px;
+         width: 100%;
+         max-width: 100%;
+         min-width: 100%;
+         min-height: 80px;
+         border-radius: 8px 8px 0px 8px;
+         padding: 8px;
+         font-family: sans-serif;
+         font-size: 15px;
+         border: 1px solid rgb(175, 174, 174);
+         background-color: rgb(241, 240, 239);
+      }
+
+      textarea:focus{
+         outline: none;
+         border: 2px solid  rgba(10, 100, 235, 0.945);
+      }
+
+      button{
+         width: 100%;
+         height: 38px;
+         margin-top: 18px;
+         font-size: 20px;
+         padding-top: 8px;
+         padding-bottom: 8px;
+         border-radius: 7px;
+         background-color:  rgb(10, 150, 231);
+         border: none;
+         color: aliceblue;
+         transition: 0.2s ease;
+         cursor: pointer;
+      }
+       
+      button:hover{
+         background-color: hsl(204, 75%, 61%);
+         color: black;
+      }
+
+      button:active{
+         background-color: hsl(204, 75%, 30%);
+      }
+
+      .error{
+         color: rgba(255, 0, 0, 0.74);
+         font-weight: 500;
+         margin-top: 5px;
+         margin-bottom: -2px;
+      }
+
+      #name-error,#email-error,#subject-error{
+         margin-top: -5px;
+         margin-bottom: 5px;
+      }
+
+      #mail-error{
+         margin-top: -3px;
+      }
+
+      @media (max-width: 600px) {
+         #contact-heading {
+         font-size: 30px;
+         margin-top: 55px;
+         margin-bottom: 35px;
+      }
+
+      #form-container {
+        margin-top: 10px;
+       padding: 0 10px;
+      }
+
+      form {
+        margin: 10px;
+        width: 100%;
+        padding: 20px 15px;
+       box-shadow: none;
+       background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      label {
+        font-size: 16px;
+       color: rgb(22, 22, 22);
+       font-weight: 600;
+     }
+
+      input,textarea {
+        font-size: 15px;
+      }
+
+      button {
+        font-size: 18px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+     }
+
+      body {
+       background-position: center;
+      background-size: cover;
+      }
+}
+</style>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  const name = document.getElementById("username").value.trim();
+  const email = document.getElementById("useremail").value.trim();
+  const subject = document.getElementById("mailsubject").value.trim();
+  const message = document.getElementById("mail").value.trim();
+
+  const nameError = document.getElementById("name-error");
+  const emailError = document.getElementById("email-error");
+  const subjectError = document.getElementById("subject-error");
+  const messageError = document.getElementById("mail-error");
+
+  nameError.textContent = "";
+  emailError.textContent = "";
+  subjectError.textContent = "";
+  messageError.textContent = "";
+
+  let isValid = true;
+
+  if (name === "") {
+    nameError.textContent = "* Please enter your name.";
+    isValid = false;
+  }
+
+  if (email === "") {
+    emailError.textContent = "* Please enter your email.";
+    isValid = false;
+  } else if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+    emailError.textContent = "* Please enter a valid email address.";
+    isValid = false;
+  }
+
+  if (subject === "") {
+    subjectError.textContent = "* Please enter a subject.";
+    isValid = false;
+  }
+
+  if (message === "") {
+    messageError.textContent = "* Please enter your message.";
+    isValid = false;
+  }
+
+  if (isValid) {
+    alert("Hello " + name + ", Thank you for contacting!, Have a nice day : )");
+    document.querySelector("form").reset();
+  }
+
+});
+</script>
+</body>
+</html>
